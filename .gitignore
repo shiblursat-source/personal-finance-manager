@@ -1,0 +1,8 @@
+.dart_tool/
+.packages
+build/
+*.g.dart
+!lib/data/database.g.dart
+android/local.properties
+*.keystore
+key.properties

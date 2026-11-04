@@ -1,0 +1,19 @@
+plugins { id "com.android.application"; id "kotlin-android"; id "dev.flutter.flutter-gradle-plugin" }
+android {
+    namespace = "com.shiblur.finance.personal_finance_manager"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+    compileOptions { sourceCompatibility = JavaVersion.VERSION_1_8; targetCompatibility = JavaVersion.VERSION_1_8 }
+    kotlinOptions { jvmTarget = JavaVersion.VERSION_1_8 }
+    defaultConfig {
+        applicationId = "com.shiblur.finance"
+        minSdk = 21
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        // Required by google_sign_in / flutter_secure_storage on some devices:
+        multiDexEnabled = true
+    }
+    buildTypes { release { signingConfig = signingConfigs.debug } }
+}
+flutter { source = "../.." }
